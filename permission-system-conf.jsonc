@@ -104,6 +104,7 @@
       "nl *": "allow",
       "popd *": "allow",
       "pushd *": "allow",
+      "readlink *": "allow",
       "realpath *": "allow",
       "tail *": "allow",
       "test *": "allow",

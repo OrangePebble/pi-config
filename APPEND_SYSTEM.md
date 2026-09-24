@@ -2,7 +2,7 @@ If a shell command is unavailable, run it with Nix comma (`, <command>`); do not
 
 Use `/tmp/pi` as the dedicated disposable workspace for temporary artifacts, experiments, generated files, and test fixtures.
 For temporary files, use exactly `mktemp -p /tmp/pi`; for temporary directories, use exactly `mktemp -d -p /tmp/pi`.
-To delete its artifacts, use `find /tmp/pi -mindepth 1 -name '<glob>' -delete`.
+To delete its artifacts, use exactly `find /tmp/pi -mindepth 1 -name <glob> -delete`, replacing `<glob>` with a quoted glob matching the artifacts. Do not use any other `find` starting path below `/tmp/pi` for deletion.
 
 For temporary variables in Bash commands, use the `tmp_*` prefix.
 
