@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/gotgenes/pi-packages/main/packages/pi-permission-system/schemas/permissions.schema.json",
   "permission": {
     "*": "ask",
     "read": "allow",
@@ -154,6 +155,7 @@
       "sha256sum *": "allow",
       "sort *": "allow",
       "sort*-o*": "ask",
+      "uniq -c": "allow",
 
       // System info
       "date": "allow",
@@ -171,6 +173,7 @@
 
       // Git read-only subcommands
       "git blame *": "allow",
+      "git apply --check *": "allow",
       "git branch --all --contains *": "allow",
       "git branch --list *": "allow",
       "git branch --merged *": "allow",
@@ -210,10 +213,33 @@
       "git show-ref *": "allow",
       "git stash list *": "allow",
       "git status *": "allow",
+      "git tag --color*": "allow",
+      "git tag --column*": "allow",
+      "git tag --contains *": "allow",
+      "git tag --format *": "allow",
+      "git tag --format=*": "allow",
+      "git tag --ignore-case": "allow",
       "git tag --list *": "allow",
+      "git tag --merged *": "allow",
+      "git tag --no-color": "allow",
+      "git tag --no-column": "allow",
+      "git tag --no-contains *": "allow",
+      "git tag --no-ignore-case": "allow",
+      "git tag --no-merged *": "allow",
+      "git tag --no-omit-empty": "allow",
+      "git tag --omit-empty": "allow",
+      "git tag --points-at *": "allow",
+      "git tag --sort *": "allow",
+      "git tag --sort=*": "allow",
+      "git tag --verify *": "allow",
+      "git tag -l *": "allow",
+      "git tag -n*": "allow",
+      "git tag -v *": "allow",
+      "git tag": "allow",
 
       // Read-only commands in another Git working directory
       "git -C * blame *": "allow",
+      "git -C * apply --check *": "allow",
       "git -C * branch --all --contains *": "allow",
       "git -C * branch --list *": "allow",
       "git -C * branch --merged *": "allow",
@@ -253,7 +279,29 @@
       "git -C * show-ref *": "allow",
       "git -C * stash list *": "allow",
       "git -C * status *": "allow",
+      "git -C * tag --color*": "allow",
+      "git -C * tag --column*": "allow",
+      "git -C * tag --contains *": "allow",
+      "git -C * tag --format *": "allow",
+      "git -C * tag --format=*": "allow",
+      "git -C * tag --ignore-case": "allow",
       "git -C * tag --list *": "allow",
+      "git -C * tag --merged *": "allow",
+      "git -C * tag --no-color": "allow",
+      "git -C * tag --no-column": "allow",
+      "git -C * tag --no-contains *": "allow",
+      "git -C * tag --no-ignore-case": "allow",
+      "git -C * tag --no-merged *": "allow",
+      "git -C * tag --no-omit-empty": "allow",
+      "git -C * tag --omit-empty": "allow",
+      "git -C * tag --points-at *": "allow",
+      "git -C * tag --sort *": "allow",
+      "git -C * tag --sort=*": "allow",
+      "git -C * tag --verify *": "allow",
+      "git -C * tag -l *": "allow",
+      "git -C * tag -n*": "allow",
+      "git -C * tag -v *": "allow",
+      "git -C * tag": "allow",
 
       // Archive inspection
       "tar -t*": "allow",
@@ -264,6 +312,7 @@
       "tar *-I *": "ask",
 
       // CSV parsing and manipulation
+      "qsv cat *": "allow",
       "qsv count *": "allow",
       "qsv dedup *": "allow",
       "qsv frequency *": "allow",
@@ -297,20 +346,35 @@
       // JSON parsing and manipulation
       "jq *": "allow",
 
-      // Miscellaneous
-      ":": "allow",
+      // Bazel inspection and module-graph queries
       "bazel --version": "allow",
       "bazel aquery *": "allow",
       "bazel cquery *": "allow",
       "bazel help *": "allow",
+      "bazel info *": "allow",
+      "bazel mod graph *": "allow",
+      "bazel mod deps *": "allow",
+      "bazel mod path *": "allow",
+      "bazel mod all_paths *": "allow",
+      "bazel mod explain *": "allow",
+      "bazel mod show_repo *": "allow",
+      "bazel mod show_extension *": "allow",
+      "bazel mod dump_repo_mapping *": "allow",
       "bazel query *": "allow",
+
+      // Nix inspection
+      "nix --version": "allow",
+      "nix derivation show /nix/store/*": "allow",
+      "nix log /nix/store/*": "allow",
+      "nix-instantiate --parse *": "allow",
+      "nixfmt --check *": "allow",
+
+      // Miscellaneous
+      ":": "allow",
       "echo *": "allow",
       "exit *": "allow",
       "false": "allow",
       "luac -p *": "allow",
-      "nix --version": "allow",
-      "nix-instantiate --parse *": "allow",
-      "nixfmt --check *": "allow",
       "printf *": "allow",
       "set -Eeuo pipefail": "allow",
       "set -e": "allow",
@@ -338,7 +402,8 @@
 
       // Work directories
       // This isn't an actual directory but a bazel target that the extension thinks is a directory
-      "/tools/env_simulator/*": "allow"
+      "/tools/env_simulator/*": "allow",
+      "/Core/Environment/*": "allow"
     },
     "external_directory_read": {
       "/etc": "allow",
@@ -361,6 +426,8 @@
       "~/.local/share/nvim/*": "allow",
       "~/home/nix-config": "allow",
       "~/home/nix-config/*": "allow",
+      "~/projects": "allow",
+      "~/projects/*": "allow",
 
       // Work directories
       "~/simulation_outputs": "allow",

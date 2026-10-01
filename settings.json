@@ -23,6 +23,7 @@
     "showTerminalProgress": true
   },
   "theme": "dark",
+  "hideThinkingBlock": true,
   "enableInstallTelemetry": false,
   "lastChangelogVersion": "0.87.1"
 }
