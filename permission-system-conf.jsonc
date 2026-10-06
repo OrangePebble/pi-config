@@ -200,6 +200,7 @@
       "git ls-files *": "allow",
       "git ls-remote *": "allow",
       "git ls-remote *-u*": "ask",
+      "git ls-tree *": "allow",
       "git merge-base *": "allow",
       "git name-rev *": "allow",
       "git reflog show *": "allow",
@@ -269,6 +270,7 @@
       "git -C * ls-files *": "allow",
       "git -C * ls-remote *": "allow",
       "git -C * ls-remote *-u*": "ask",
+      "git -C * ls-tree *": "allow",
       "git -C * merge-base *": "allow",
       "git -C * name-rev *": "allow",
       "git -C * reflog show *": "allow",
@@ -418,8 +420,6 @@
       "/nix/store/*": "allow",
       "/usr/share": "allow",
       "/usr/share/*": "allow",
-      "~/.cache/bazel": "allow",
-      "~/.cache/bazel/*": "allow",
       "~/.config/niri": "allow",
       "~/.config/niri/*": "allow",
       "~/.config/nvim": "allow",
@@ -432,14 +432,16 @@
       "~/.local/share/nvim/*": "allow",
       "~/home/nix-config": "allow",
       "~/home/nix-config/*": "allow",
-      "~/projects": "allow",
-      "~/projects/*": "allow",
 
       // Work directories
-      "~/simulation_outputs": "allow",
-      "~/simulation_outputs/*": "allow",
+      "~/.cache/bazel": "allow",
+      "~/.cache/bazel/*": "allow",
       "~/nix-work-config": "allow",
-      "~/nix-work-config/*": "allow"
+      "~/nix-work-config/*": "allow",
+      "~/projects": "allow",
+      "~/projects/*": "allow",
+      "~/simulation_outputs": "allow",
+      "~/simulation_outputs/*": "allow"
     }
   }
 }
