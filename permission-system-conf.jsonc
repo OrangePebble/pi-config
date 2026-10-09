@@ -90,6 +90,22 @@
       "timeout *": "allow",
       "xargs *": "allow",
 
+      // Shell builtins and execution control
+      ":": "allow",
+      "echo *": "allow",
+      "exit *": "allow",
+      "false": "allow",
+      "printf *": "allow",
+      "set -Eeuo pipefail": "allow",
+      "set -e": "allow",
+      "set -eo pipefail": "allow",
+      "set -eu": "allow",
+      "set -euo pipefail": "allow",
+      "set -o pipefail": "allow",
+      "set -u": "allow",
+      "set -ue": "allow",
+      "true": "allow",
+
       // File inspection
       "[ *": "allow",
       "basename *": "allow",
@@ -370,6 +386,12 @@
       "bazel mod dump_repo_mapping *": "allow",
       "bazel query *": "allow",
 
+      // Clangd diagnostic checks
+      "clangd --check=* --compile-commands-dir=*": "allow",
+      "clangd --check=*--query-driver*": "ask",
+      "clangd --check=*--background-index*": "ask",
+      "clangd --check=*--pch-storage=disk*": "ask",
+
       // Nix inspection
       "nix --version": "allow",
       "nix derivation show /nix/store/*": "allow",
@@ -377,25 +399,13 @@
       "nix-instantiate --parse *": "allow",
       "nixfmt --check *": "allow",
 
-      // Miscellaneous
-      ":": "allow",
-      "echo *": "allow",
-      "exit *": "allow",
-      "false": "allow",
+      // Lua syntax validation
       "luac -p *": "allow",
-      "printf *": "allow",
-      "set -Eeuo pipefail": "allow",
-      "set -e": "allow",
-      "set -eo pipefail": "allow",
-      "set -eu": "allow",
-      "set -euo pipefail": "allow",
-      "set -o pipefail": "allow",
-      "set -u": "allow",
-      "set -ue": "allow",
+
+      // Miscellaneous
       "shuf *": "allow",
       "sleep *": "allow",
       "tmp_*=*": "allow",
-      "true": "allow",
 
       // Disposable playground
       // A playground "find" rule is above so dangerous flags get filtered out.
@@ -408,10 +418,11 @@
       "/tmp/pi": "allow",
       "/tmp/pi/*": "allow",
 
-      // Work directories
-      // This isn't an actual directory but a bazel target that the extension thinks is a directory
-      "/tools/env_simulator/*": "allow",
-      "/Core/Environment/*": "allow"
+      // Bazel targets (without the initial "/"). This extension thinks they are directories.
+      "/...": "allow",
+      "/Core/Environment*": "allow",
+      "/engine*": "allow",
+      "/tools/env_simulator*": "allow"
     },
     "external_directory_read": {
       "/etc": "allow",
