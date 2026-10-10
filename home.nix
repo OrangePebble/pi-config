@@ -47,7 +47,6 @@
       [browser]
       chromium_path = "${pkgs.chromium}/bin/chromium"
     '';
-    ".config/rpiv-todo/config.json".text = ''{ "maxWidgetLines": 5 }'';
   };
 
   # Slop that installs packages and uninstalls any package that isn't in "packages".
@@ -56,8 +55,6 @@
       packages = [
         "npm:@gotgenes/pi-permission-system@31.1.3"
         "npm:donsetch@4.1.0"
-        "npm:@juicesharp/rpiv-ask-user-question@2.10.1"
-        "npm:@juicesharp/rpiv-todo@2.10.1"
         "npm:pi-scroll-speed@0.2.0"
       ];
     in

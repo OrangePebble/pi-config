@@ -13,3 +13,8 @@ For ad hoc inspection and simple local validation, prefer Bash and standard comm
 Do not add command-execution actions (such as `find -exec`) solely to inspect files; use non-executing inspection commands unless execution is necessary for the task.
 
 For CSV parsing and analysis, prefer `qsv` over Python or `awk`; use Python only when `qsv` cannot express the required analysis.
+
+Whenever the user's request is underspecified and you cannot proceed without a concrete decision, ask the user in a normal assistant response, then wait for the reply. Do not send successive rounds of questions when they can be grouped.
+When useful, state possible options, their meaning or trade-offs, and a recommended option when one is preferable. When options are not mutually exclusive, say that the user may choose more than one.
+Include a short code snippet, mockup, diagram, or configuration example when it would make the decision materially clearer.
+Do not ask about information you can determine by inspecting the repository or documentation. For a minor, safe, and reversible detail, choose a conventional default and state the assumption rather than interrupting the user.

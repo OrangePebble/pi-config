@@ -2,8 +2,6 @@
   "packages": [
     "npm:@gotgenes/pi-permission-system@31.1.3",
     "npm:donsetch@4.1.0",
-    "npm:@juicesharp/rpiv-ask-user-question@2.10.1",
-    "npm:@juicesharp/rpiv-todo@2.10.1",
     "npm:pi-scroll-speed@0.2.0"
   ],
   "defaultTools": [

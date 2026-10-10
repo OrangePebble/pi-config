@@ -15,9 +15,7 @@
       "/tmp/pi/*": "allow",
       "*.lock": "deny"
     },
-    "ask_user_question": "allow",
     "open_for_user": "allow",
-    "todo": "allow",
     "web_crawl": "allow",
     "web_fetch": "allow",
     "web_screenshot": "allow",
