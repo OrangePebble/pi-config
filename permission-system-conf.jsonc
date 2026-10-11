@@ -122,6 +122,7 @@
       "read *": "allow",
       "readlink *": "allow",
       "realpath *": "allow",
+      "strings *": "allow",
       "tail *": "allow",
       "test *": "allow",
       "tr *": "allow",
