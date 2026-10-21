@@ -173,7 +173,9 @@
       "uniq -c": "allow",
 
       // System info
-      "date": "allow",
+      "date *": "allow",
+      "date --s*": "ask",
+      "date -s*": "ask",
       "hostname": "allow",
       "id *": "allow",
       "printenv *": "allow",
@@ -417,6 +419,10 @@
       "/tmp/pi": "allow",
       "/tmp/pi/*": "allow",
 
+      // Work directories to allow commands like `qsv` that are not read-only.
+      "~/simulation_outputs": "allow",
+      "~/simulation_outputs/*": "allow",
+
       // Bazel targets (without the initial "/"). This extension thinks they are directories.
       "/...": "allow",
       "/Core/Environment*": "allow",
@@ -449,9 +455,7 @@
       "~/nix-work-config": "allow",
       "~/nix-work-config/*": "allow",
       "~/projects": "allow",
-      "~/projects/*": "allow",
-      "~/simulation_outputs": "allow",
-      "~/simulation_outputs/*": "allow"
+      "~/projects/*": "allow"
     }
   }
 }
