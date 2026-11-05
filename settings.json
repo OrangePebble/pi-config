@@ -20,7 +20,7 @@
   "terminal": {
     "showTerminalProgress": true
   },
-  "theme": "system",
+  "theme": "carbonfox",
   "hideThinkingBlock": false,
   "enableInstallTelemetry": false,
   "lastChangelogVersion": "1.5.0",

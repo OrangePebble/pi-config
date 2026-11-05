@@ -43,6 +43,7 @@
     ".config/pi/extensions/socket-server.ts".source = funcs.mkMutableConfigSymlink ./socket-server.ts;
     ".config/pi/settings.json".source = funcs.mkMutableConfigSymlink ./settings.json;
     ".config/pi/models.json".source = funcs.mkMutableConfigSymlink ./models.jsonc;
+    ".config/pi/themes/carbonfox.json".source = funcs.mkMutableConfigSymlink ./carbonfox.json;
     ".config/pi/APPEND_SYSTEM.md".source = funcs.mkMutableConfigSymlink ./APPEND_SYSTEM.md;
     ".config/donsetch/donsetch.toml".text = ''
       [browser]
