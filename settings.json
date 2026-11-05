@@ -1,8 +1,8 @@
 {
   "packages": [
-    "npm:@gotgenes/pi-permission-system@31.1.3",
-    "npm:donsetch@4.1.0",
-    "npm:pi-scroll-speed@0.2.0"
+    "npm:@gotgenes/pi-permission-system@42.0.0",
+    "npm:donsetch@4.10.5",
+    "npm:pi-scroll-speed@0.2.1"
   ],
   "defaultTools": [
     "read",
@@ -23,9 +23,13 @@
   "theme": "system",
   "hideThinkingBlock": false,
   "enableInstallTelemetry": false,
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.5.0",
   "enabledModels": [
     "github-copilot/gpt-6-luna",
     "github-copilot/gpt-6.1-sol"
-  ]
+  ],
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:@gotgenes/pi-permission-system@42.0.0\",\"scope\":\"user\"}": "42.0.0",
+    "{\"source\":\"npm:pi-scroll-speed@0.2.1\",\"scope\":\"user\"}": "0.2.1"
+  }
 }

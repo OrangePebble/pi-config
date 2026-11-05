@@ -54,9 +54,9 @@
   home.activation.installPiPackages = lib.hm.dag.entryAfter [ "writeBoundary" ] (
     let
       packages = [
-        "npm:@gotgenes/pi-permission-system@31.1.3"
-        "npm:donsetch@4.1.0"
-        "npm:pi-scroll-speed@0.2.0"
+        "npm:@gotgenes/pi-permission-system@42.0.0"
+        "npm:donsetch@4.10.5"
+        "npm:pi-scroll-speed@0.2.1"
       ];
     in
     #bash
