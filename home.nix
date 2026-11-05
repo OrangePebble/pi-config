@@ -42,6 +42,7 @@
     ".config/pi/extensions/donsetch-fixes.ts".source = funcs.mkMutableConfigSymlink ./donsetch-fixes.ts;
     ".config/pi/extensions/socket-server.ts".source = funcs.mkMutableConfigSymlink ./socket-server.ts;
     ".config/pi/settings.json".source = funcs.mkMutableConfigSymlink ./settings.json;
+    ".config/pi/models.json".source = funcs.mkMutableConfigSymlink ./models.jsonc;
     ".config/pi/APPEND_SYSTEM.md".source = funcs.mkMutableConfigSymlink ./APPEND_SYSTEM.md;
     ".config/donsetch/donsetch.toml".text = ''
       [browser]

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://pi.dev/schemas/models.schema.json",
+  "providers": {
+    "github-copilot": {
+      "modelOverrides": {
+        // Reducing context window so I'm not charged extra
+        // "gpt-6-luna": {
+        //   "contextWindow": 272000
+        // },
+        "gpt-5.6-terra": {
+          "contextWindow": 272000
+        },
+        "gpt-6.1-sol": {
+          "contextWindow": 272000
+        }
+      }
+    }
+  }
+}
